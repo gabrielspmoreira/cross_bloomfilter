@@ -16,8 +16,8 @@ p.s. the Java implementation was inspired in [inbloom](http://github.com/Everyth
 
 
 ## Dump headers
-This implementation provides utilities for serializing / deserializing Bloom filters so they can be sent over the network. It supports dumping options like gzip and base64 formats.
-Since when you create a Bloom filter, you need to initialize it with parameters of expected cardinality and false positive rates. Those parameters are stored as a header when serializing the filter. It uses a 16 bit checksum as part of the header.
+This implementation provides utilities for serializing / deserializing Bloom filters so they can be stored in files/databases or sent over the network. It supports dumping options like gzip and base64 formats.
+When you create a Bloom filter, you need to initialize it with parameters of expected cardinality and false positive rates. Those parameters are stored as a header when serializing the filter. It uses a 16 bit checksum as part of the header, to allow its consistency validation during deserialization.
 
 ### Serialized filter structure:
 
